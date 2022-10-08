@@ -1,5 +1,4 @@
-
-local QRCore = exports['qr-core']:GetCoreObject()
+local QRCore = exports["qr-core"]:GetCoreObject()
 
 RegisterServerEvent('qr-shops:server:UpdateShopItems')
 AddEventHandler('qr-shops:server:UpdateShopItems', function(shopType, itemData, amount)

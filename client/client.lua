@@ -1,26 +1,23 @@
-
-local QRCore = exports['qr-core']:GetCoreObject()
+local QRCore = exports["qr-core"]:GetCoreObject()
+local store
 
 Citizen.CreateThread(function()
     for store, v in pairs(Config.Locations) do
-        exports['qr-core']:createPrompt(v.name, v.coords, 0xF3830D8E, 'Open ' .. v.name, {
+        exports['qr-core']:createPrompt(v.name, v.coords, QRCore.Shared.Keybinds['J'], 'Open ' .. v.name, {
             type = 'client',
             event = 'qr-shops:openshop',
             args = {v.products, v.name},
         })
         if v.showblip == true then
-            local StoreBlip = N_0x554d9d53f696d002(1664425300, v.coords)
+            local StoreBlip = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, v.coords)
             if v.products == "normal" then
-                SetBlipSprite(StoreBlip, 1475879922, 52)
+                SetBlipSprite(StoreBlip, 1475879922, 1)
                 SetBlipScale(StoreBlip, 0.2)
             elseif v.products == "weapons" then
                 SetBlipSprite(StoreBlip, -145868367, 1)
                 SetBlipScale(StoreBlip, 0.2)
             elseif v.products == "saloon" then
                 SetBlipSprite(StoreBlip, 1879260108, 1)
-                SetBlipScale(StoreBlip, 0.2)
-            elseif v.products == "casino" then
-                SetBlipSprite(StoreBlip, 595820042, 1)
                 SetBlipScale(StoreBlip, 0.2)
             end
         end
