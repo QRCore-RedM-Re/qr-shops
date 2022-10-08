@@ -1,4 +1,5 @@
 
+local QRCore = exports['qr-core']:GetCoreObject()
 
 Citizen.CreateThread(function()
     for store, v in pairs(Config.Locations) do
@@ -32,7 +33,7 @@ AddEventHandler('qr-shops:openshop', function(shopType, shopName)
     local shop = shopName
     local ShopItems = {}
     ShopItems.items = {}
-    exports['qr-core']:TriggerCallback('qr-shops:server:getLicenseStatus', function(result)
+    QRCore.Functions.TriggerCallback('qr-shops:server:getLicenseStatus', function(result)
         ShopItems.label = shop
         if type == "weapon" then
             if result then

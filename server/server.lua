@@ -1,4 +1,5 @@
 
+local QRCore = exports['qr-core']:GetCoreObject()
 
 RegisterServerEvent('qr-shops:server:UpdateShopItems')
 AddEventHandler('qr-shops:server:UpdateShopItems', function(shopType, itemData, amount)
@@ -20,9 +21,9 @@ AddEventHandler('qr-shops:server:RestockShopItems', function(shopType)
     end
 end)
 
-exports['qr-core']:CreateCallback('qr-shops:server:getLicenseStatus', function(source, cb)
+QRCore.Functions.CreateCallback('qr-shops:server:getLicenseStatus', function(source, cb)
     local src = source
-    local Player = exports['qr-core']:GetPlayer(src)
+    local Player = QRCore.Functions.GetPlayer(src)
     local licenseTable = Player.PlayerData.metadata["licences"]
 
     if licenseTable.weapon then
