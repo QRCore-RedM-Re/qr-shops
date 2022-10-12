@@ -1,5 +1,5 @@
 Config = {}
-
+Config.UseTarget = GetConvar('UseTarget', 'false') == 'true' -- Use qr-target interactions (don't change this, go to your server.cfg and add setr UseTarget true)
 Config.Products = {
     ["normal"] = {
         [1] = { name = "water",		price = 1, 	amount = 50,	info = {}, type = "item", slot = 1, },
@@ -55,30 +55,30 @@ Config.Products = {
 Config.Locations = {
 
 	-- general stores
-    {name = 'Rhodes General Store',         products = "normal",    coords = vector3(1328.99, -1293.28, 77.02),     showblip = true},
-    {name = 'Valentine General Store',      products = "normal",    coords = vector3(-322.433, 803.797, 117.882),   showblip = true},
-    {name = 'Strawberry General Store',     products = "normal",    coords = vector3(-1791.49, -386.87, 160.33),    showblip = true},
-    {name = 'Annesburg General Store',      products = "normal",    coords = vector3(2931.35, 1365.94, 45.19),      showblip = true},
-    {name = 'Saint Denis General Store',    products = "normal",    coords = vector3(2859.81, -1200.37, 49.59),     showblip = true},
-    {name = 'Tumbleweed General Store',     products = "normal",    coords = vector3(-5487.613, -2938.54, -0.38),   showblip = true},
-    {name = 'Armadillo General Store',      products = "normal",    coords = vector3(-3685.56, -2622.59, -13.43),   showblip = true},
-    {name = 'Blackwater General Store',     products = "normal",    coords = vector3(-785.18, -1323.83, 43.88),     showblip = true},
-    {name = 'Van Horn General Store',       products = "normal",    coords = vector3(3027.03, 561.00, 44.72),       showblip = true},
+    {name = 'Rhodes General Store',         products = "normal",    coords = vector3(1329.72, -1294.42, 77.02), heading = 61.42, ped = 'U_M_M_AsbGunsmith_01',     showblip = true},
+    {name = 'Valentine General Store',      products = "normal",    coords = vector3(-324.08, 803.5, 117.88), heading = 274.09, ped = 'U_M_M_AsbGunsmith_01',   showblip = true},
+    {name = 'Strawberry General Store',     products = "normal",    coords = vector3(-1791.49, -386.87, 160.33), heading = 106.83, ped = 'U_M_M_AsbGunsmith_01',    showblip = true},
+    {name = 'Annesburg General Store',      products = "normal",    coords = vector3(2931.15, 1365.78, 45.2), heading = 250.66, ped = 'U_M_M_AsbGunsmith_01',      showblip = true},
+    {name = 'Saint Denis General Store',    products = "normal",    coords = vector3(2859.51, -1202.19, 49.59), heading = 3.92, ped = 'U_M_M_AsbGunsmith_01',     showblip = true},
+    {name = 'Tumbleweed General Store',     products = "normal",    coords = vector3(-3687.35, -2623.47, -13.43), heading = 271.15, ped = 'U_M_M_AsbGunsmith_01',  showblip = true},
+    {name = 'Armadillo General Store',      products = "normal",    coords = vector3(-3685.56, -2622.59, -13.43), heading = 106.83, ped = 'U_M_M_AsbGunsmith_01',   showblip = true},
+    {name = 'Blackwater General Store',     products = "normal",    coords = vector3(-785.93, -1322.28, 43.88), heading = 168.53, ped = 'U_M_M_AsbGunsmith_01',     showblip = true},
+    {name = 'Van Horn General Store',       products = "normal",    coords = vector3(3025.56, 562.26, 44.72), heading = 261.17, ped = 'U_M_M_AsbGunsmith_01',       showblip = true},
     
 	-- weapon shops
-	{name = 'Valentine Gunsmith',           products = "weapons",   coords = vector3(-281.97, 781.09,119.52),       showblip = true},
-    {name = 'Tumbleweed Gunsmith',          products = "weapons",   coords = vector3(-5508.14, -2964.33,-0.628),    showblip = true},
-    {name = 'Saint Denis Gunsmith',         products = "weapons",   coords = vector3(2716.42, -1285.42,49.63),      showblip = true},
-    {name = 'Rhodes Gunsmith',              products = "weapons",   coords = vector3(1322.67, -1323.16,77.88),      showblip = true},
-    {name = 'Annesburg Gunsmith',           products = "weapons",   coords = vector3(2946.50, 1319.53,44.82),       showblip = true},
+	{name = 'Valentine Gunsmith',           products = "weapons",   coords = vector3(-281.58, 778.88, 119.5), heading = 1.18, ped = 'U_M_M_AsbGunsmith_01',       showblip = true},
+    {name = 'Tumbleweed Gunsmith',          products = "weapons",   coords = vector3(-5506.44, -2963.83, -0.64), heading = 106.83, ped = 'U_M_M_AsbGunsmith_01',    showblip = true,},
+    {name = 'Saint Denis Gunsmith',         products = "weapons",   coords = vector3(2717.26, -1286.84, 49.64), heading = 27.85, ped = 'U_M_M_AsbGunsmith_01',      showblip = true},
+    {name = 'Rhodes Gunsmith',              products = "weapons",   coords = vector3(1322.39, -1323.05, 77.89), heading = 341.78, ped = 'U_M_M_AsbGunsmith_01',      showblip = true},
+    {name = 'Annesburg Gunsmith',           products = "weapons",   coords = vector3(2948.28, 1319.15, 44.82), heading = 71.31, ped = 'U_M_M_AsbGunsmith_01',      showblip = true},
     
 	-- saloons
-	{name = 'Valentine Saloon',             products = "saloon",    coords = vector3(-313.26, 805.22, 118.98),      showblip = true},
-    {name = 'Tumbleweed Saloon',            products = "saloon",    coords = vector3(-5518.35, -2906.43, -1.75),    showblip = true},
-    {name = 'Armadillo Saloon',             products = "saloon",    coords = vector3(-3699.74, -2594.51, -13.31),   showblip = true},
-    {name = 'Blackwater Saloon ',           products = "saloon",    coords = vector3(-817.66, -1319.43, 43.67),     showblip = true},
-    {name = 'Rhodes Saloon',                products = "saloon",    coords = vector3(1340.14, -1374.99, 80.48),     showblip = true},
-    {name = 'Saint Denis Saloon',           products = "saloon",    coords = vector3(2792.55, -1168.14, 47.93),     showblip = true},
-    {name = 'Van Horn Saloon',              products = "saloon",    coords = vector3(2947.58, 528.07, 45.33),       showblip = true},
+	{name = 'Valentine Saloon',             products = "saloon",    coords = vector3(-313.45, 806.24, 118.98), heading = 286.84, ped = 'U_M_M_AsbGunsmith_01',     showblip = true},
+    {name = 'Tumbleweed Saloon',            products = "saloon",    coords = vector3(-5518.27, -2906.37, -1.75), heading = 212.75, ped = 'U_M_M_AsbGunsmith_01',   showblip = true},
+    {name = 'Armadillo Saloon',             products = "saloon",    coords = vector3(-3699.74, -2594.51, -13.31), heading = 106.83, ped = 'U_M_M_AsbGunsmith_01',  showblip = true},
+    {name = 'Blackwater Saloon ',           products = "saloon",    coords = vector3(-817.63, -1319.31, 43.68), heading = 264.16, ped = 'U_M_M_AsbGunsmith_01',    showblip = true},
+    {name = 'Rhodes Saloon',                products = "saloon",    coords = vector3(1340.14, -1374.99, 80.48), heading = 250.12, ped = 'U_M_M_AsbGunsmith_01',    showblip = true},
+    {name = 'Saint Denis Saloon',           products = "saloon",    coords = vector3(2792.54, -1168.12, 47.93), heading = 229.66, ped = 'U_M_M_AsbGunsmith_01',    showblip = true},
+    {name = 'Van Horn Saloon',              products = "saloon",    coords = vector3(2947.88, 528.06, 45.34), heading = 179.12, ped = 'U_M_M_AsbGunsmith_01',      showblip = true},
 	
 }
