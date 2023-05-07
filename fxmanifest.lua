@@ -1,16 +1,12 @@
 fx_version 'cerulean'
-game "rdr3"
-rdr3_warning "I acknowledge that this is a prerelease build of RedM, and I am aware my resources *will* become incompatible once RedM ships."
+game 'rdr3'
+rdr3_warning 'I acknowledge that this is a prerelease build of RedM, and I am aware my resources *will* become incompatible once RedM ships.'
 
-description 'qr-Shops'
+description 'qr-shops | Shops using target or prompts'
 
-server_script 'server/*.lua'
-client_script 'client/*.lua'
+shared_scripts { '@ox_lib/init.lua', 'modules/shared.lua', 'shared/*.lua' }
+client_scripts { 'modules/client.lua', 'client/*.lua' }
+server_scripts { 'server/*.lua' }
+dependencies { 'qr-inventory' }
 
-shared_scripts {
-	'config.lua'
-}
-
-dependencies {
-	'qr-inventory'
-}
+lua54 'yes'
