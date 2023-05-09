@@ -5,7 +5,7 @@ local ShopBlips = {}
 -- Create Shops --
 local function SetupShops()
     for q, r in ipairs(Config.Shops) do
-        if ShopBlips[q] == nil then ShopBlips[q] = QRBlip(t.name, vector3(r.ped.coords.x, r.ped.coords.y, r.ped.coords.z), r.blip.icon, r.blip.scale) end
+        if ShopBlips[q] == nil then ShopBlips[q] = QRBlip(r.name, vector3(r.ped.coords.x, r.ped.coords.y, r.ped.coords.z), r.blip.icon, r.blip.scale) end
         if ShopPeds[q] == nil then ShopPeds[q] = QRSpawnPed(r.ped.model, r.ped.coords) end
         if Config.UseTarget then
             exports['qr-target']:AddTargetEntity(ShopPeds[q], {
