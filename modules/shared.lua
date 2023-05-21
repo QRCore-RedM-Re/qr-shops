@@ -1,6 +1,4 @@
 QRCore = exports['qr-core']:GetCoreObject()
-sharedItems = QRCore.Shared.Items
-Keys = QRCore.Shared.Keybinds
 
 -- Debug Print --
 function Debug(type, debugTxt)

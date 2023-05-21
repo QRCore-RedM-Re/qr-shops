@@ -21,7 +21,7 @@ local function SetupShops()
             })
         else
             local PromptCoords = GetOffsetFromEntityInWorldCoords(ShopPeds[q], 0.0, 3.0, 0.0) -- Prompt 3 Units in Front of Ped
-            exports['qr-core']:createPrompt(r.name..q, vector3(PromptCoords.x, PromptCoords.y, PromptCoords.z), Keys['J'], 'Open ' .. r.name, {
+            exports['qr-core']:createPrompt(r.name..q, vector3(PromptCoords.x, PromptCoords.y, PromptCoords.z), QRCore.Shared.GetKey('J'), 'Open ' .. r.name, {
                 type = 'client',
                 event = 'qr-shops:client:Shop',
                 args = { q },
