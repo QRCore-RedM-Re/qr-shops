@@ -215,3 +215,7 @@ Config.Shops = {
         items = Config.Items['weapons']
     },
 }
+
+--------------------------------------------
+
+QRCore = exports['qr-core']:GetCoreObject()

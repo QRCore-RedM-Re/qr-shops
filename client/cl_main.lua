@@ -1,3 +1,5 @@
+local qrc = require('modules.client')
+local Utils = require('modules.shared')
 local Player = QRCore.Functions.GetPlayerData()
 local ShopPeds = {}
 local ShopBlips = {}
@@ -5,8 +7,8 @@ local ShopBlips = {}
 -- Create Shops --
 local function SetupShops()
     for q, r in ipairs(Config.Shops) do
-        if ShopBlips[q] == nil then ShopBlips[q] = QRBlip(r.name, vector3(r.ped.coords.x, r.ped.coords.y, r.ped.coords.z), r.blip.icon, r.blip.scale) end
-        if ShopPeds[q] == nil then ShopPeds[q] = QRSpawnPed(r.ped.model, r.ped.coords) end
+        if ShopBlips[q] == nil then ShopBlips[q] = qrc.Blip(r.name, vector3(r.ped.coords.x, r.ped.coords.y, r.ped.coords.z), r.blip.icon, r.blip.scale) end
+        if ShopPeds[q] == nil then ShopPeds[q] = qrc.SpawnPed(r.ped.model, r.ped.coords) end
         if Config.UseTarget then
             exports['qr-target']:AddTargetEntity(ShopPeds[q], {
                 options = {
@@ -28,7 +30,7 @@ local function SetupShops()
             })
         end
     end
-    Debug('Shops Created')
+    Utils.Debug('Shops Created')
 end
 
 -- Remove Shops --
@@ -38,12 +40,12 @@ local function CleanupShops()
         RemoveBlip(ShopBlips[q])
         if not Config.UseTarget then exports['qr-core']:deletePrompt(r.name..q) end
     end
-    Debug('Shops Removed')
+    Utils.Debug('Shops Removed')
 end
 
 -- Open Shop --
 RegisterNetEvent('qr-shops:client:Shop', function(shopID)
-    local playerCoords = GetEntityCoords(PlayerPedId())
+    local playerCoords = GetEntityCoords(cache.ped)
     local shopCoords = Config.Shops[shopID].ped.coords
     local dist = #(playerCoords - vector3(shopCoords.x, shopCoords.y, shopCoords.z))
     if dist > 5 then return end
